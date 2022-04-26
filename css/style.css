@@ -1,0 +1,150 @@
+/* Aqiui se formatea el documento html, los margenes y el padding el espacio border-box ajusta a la medida exacta sin dar pixeles demas */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Aqui se establece la fuente que estoy utilizando, se puede agregar de forma local pero prefiero el link directo desde html */
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.topnav {
+  overflow: hidden; /* Aqui creamos el entorno posicionandose por encima  */
+
+  background-color: #333;
+  position: relative; /* Aqui le damos una posicion relativa es decir en cualquier direccion que queramos   */
+}
+
+.topnav a {
+  float: left; /* aqui posicionamos con la ayuda de relative, como hijo vendria siendo la etiqueta "a"   */
+  color: #ffffff; /* Color de letra muy distinto a un background  */
+  text-align: center; /* Centramos solamente el texto */
+  padding: 14px 16px; /* un padding top y right(superior y dercho)  */
+  text-decoration: none; /* formateamos los estilos del texto  */
+  font-size: 17px; /* Tamaño de letra  */
+}
+
+.a {
+  color: #ffffff;
+  cursor: pointer;
+}
+/* Se llama en la posicion hover(posicion mouse)  */
+.topnav a:hover {
+  background-color: rgb(171, 187, 113); /* color de cuando pase el mouse  */
+  color: black; /* Color de letra  */
+}
+header {
+  z-index: 1; /* Posicionamos la cabezera por encima  */
+}
+
+.title {
+  text-align: center; /* centramos texto  */
+  border: 1px dotted #000; /* Le damos un vorde al titulo de un pixel con puntos achurados  */
+  padding: 8px; /* padding superior  */
+}
+
+.section {
+  text-align: center;
+  align-items: center;
+}
+
+.article {
+  background: #f5f5f5; /* color del article  */
+}
+
+.coco:hover {
+  background: #333;
+}
+
+.modal-dialog {
+  text-align: center;
+  align-items: center;
+}
+
+.formulario-contacto {
+  background: #c9d2d0;
+  align-items: center;
+  text-align: center;
+}
+
+.contenido__article:hover {
+  color: #f2f2f2; /* color de la letra  */
+  background: #333; /* background negro del article  */
+}
+
+/* Para que la imagen sea responsiva y evitar bugs  */
+.img {
+  position: relative; /* Relativo respetando los elementos*/
+  left: 50%; /* Posicionamos a la izquierda en 50%*/
+  transform: translate(
+    -50%
+  ); /* establecemos en negativo para centrar de forma horizontal*/
+  max-width: 100%; /* establecemos un maximo de anchura */
+  max-height: 100%; /* establecemos un maximo para la altura  */
+  padding: 3rem; /* le damos espaciado  */
+}
+/* En la seccion de responsive el audio tiene propiedades que hacen que no se pueda achicar y buguea un poco el responsive  */
+.sonido {
+  padding: 1em; /* Le damos espaciado de 1em  */
+}
+
+/* aqui se llama a las clases links  */
+.link {
+  padding: 1rem; /* espaciamos  */
+  color: black; /* cambiamos de color el link  */
+}
+
+/* estilos cuando pasemos el mouse por encima  */
+.link:hover {
+  text-decoration: none; /* posicionamos repeat repite(1 vez, en 1 fraccion) es decir 1 arriba de la otra  */
+  color: white; /* Color de la letra  */
+  font-weight: bold; /* fuente marcada(negrita)  */
+}
+
+/* A Las clases p todas llevaran 1em */
+.p {
+  padding: 1em;
+}
+
+/* Aqui se establece un maximo en el video para evitar bugs responsive  */
+.video {
+  position: relative; /* para soltar el elemento podremos posicionar donde queramos respetando los espacios de los demas elementos */
+  left: 50%; /*MOVEMOS el elemento a la izquierda en 50% */
+  transform: translate(
+    -50%
+  ); /*aqui hacemos es recolocar de forma horizontal de forma negativa para que se centre en el medio */
+  max-width: 100%; /*maximo del 100% */
+}
+
+.contenido-article2 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-row-gap: 2em;
+}
+
+.img {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.not:hover {
+  color: #f2f2f2;
+  background: #333;
+}
+
+li {
+  list-style-type: none;
+}
+.footer {
+  left: 0; /* Posicionamos a la izquierda en 0*/
+  bottom: 0; /* abajo en la psicion 0  */
+  width: 100%; /* Una anchura de completa  */
+  background-color: #c9d2d0; /* color del background  */
+  color: #31231e; /* color de letra  */
+  text-align: center; /* Texto centrado  */
+}

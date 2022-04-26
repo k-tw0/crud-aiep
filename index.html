@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crud tipo php</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+    </style>
+
+    <script src="js/jQuery/jquery-3.6.0.min.js"></script>
+    <script src="js/booStrap/bootstrap.min.js"></script>
+    <script src="js/crud.js"></script>
+    <link rel="stylesheet" href="css/booStrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="topnav">
+        <a id="inicioID" href="#">Inicio</a>
+        <a id="negociosID" href="#">Deporte</a>
+        <a id="deportesID" href="#">Negocios</a>
+        <a
+          id="modalID"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+          class="a"
+          >Add+</a
+        >
+        <a href="#" id="contact" class="abrir-form">Contacto</a>
+      </div>
+      <div id="reloj"></div>
+    </header>
+
+    <div class="title">
+      <h1>El faro</h1>
+      <img src="https://img.icons8.com/ios/50/000000/lighthouse.png" />
+    </div>
+    <!-- Modal -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Creando Noticia</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form class="formulario-container">
+              <fieldset>
+                <legend>seccion</legend>
+                <select name="transporte" id="seccion-selected">
+                  <option value="" disabled selected>
+                    Seleccione una seccion
+                  </option>
+                  <option>Inicio</option>
+
+                  <option>Negocios</option>
+
+                  <option>Deportes</option>
+                </select>
+
+                <br />
+                <legend>Descripcion</legend>
+                <textarea
+                  name="comentario"
+                  rows="3"
+                  id="descripcion"
+                ></textarea>
+                <legend>Titulo</legend>
+                <input type="text" class="form-control" id="titulo" required />
+                <!--––  <textarea name="comment" form="titleform">
+                        Enter text here...</textarea
+                >––-->
+
+                <br />
+              </fieldset>
+            </form>
+            <hr />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" id="crear" class="btn btn-primary">
+              Crear Tabla
+            </button>
+            <button type="button" id="insertar" class="btn btn-success">
+              Insertar
+            </button>
+
+            <button type="button" id="borrarTodo" class="btn btn-danger">
+              Eliminar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <article class="article">
+      <div id="contenido-article1" class="contenido__article">
+        <img class="img" src="src/sonido.png" alt="" />
+        <div class="sonido">
+          <audio controls="all" src="src/pl.mp3"></audio>
+        </div>
+        <a
+          class="link"
+          href="https://elpais.com/elpais/2017/10/02/ciencia/1506943745_596305.html"
+          >Noticia completa</a
+        >
+        <p class="p">
+          El ruido es uno de los factores ambientales más importantes a nivel de
+          salud pública. A pesar de la evidencia emergente de estudios
+          experimentales y epidemiológicos, los efectos del ruido sobre la salud
+          han captado poco la atención y a menudo son ignorados.
+        </p>
+        <p class="p">
+          El ruido se define como un "sonido no deseado". El tráfico rodado es
+          la fuente de contaminación acústica más común tanto dentro como fuera
+          de las ciudades, seguido de los trenes y los aviones. La Organización
+          Mundial de la Salud (OMS) clasifica el ruido del tráfico como el
+          segundo factor medioambiental más perjudicial en Europa, detrás sólo
+          de la contaminación atmosférica.
+        </p>
+        <p class="p"></p>
+      </div>
+      <div id="contenido-article4" class="contenido__article">
+        <div class="video">
+          <video class="video" controls="all" src="src/playa.mp4"></video>
+        </div>
+        <p class="p">Palmera sonora</p>
+        <p class="p">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non
+          voluptatem quae inventore ducimus quod similique voluptas consequuntur
+          quasi provident quisquam.
+        </p>
+        <p class="p"></p>
+      </div>
+
+      <div id="contenido-article2" class="contenido-article2">
+        <!–– Aqui tambien estoy añadiendo la metodologia beem ya que estoy añadiendo el las clases a cada etiqueta ––>
+        <div class="not">
+          <img class="img" src="src/not.png" alt="" />
+          <li>
+            <a
+              class="link"
+              href="https://chile.as.com/futbol/ofician-a-la-anfp-y-a-la-direccion-del-trabajo-por-despido-de-arbitros-del-futbol-nacional-n/"
+              >Noticia completa
+            </a>
+          </li>
+
+          <p class="p">
+            A raíz del despido de 11 árbitros del fútbol chileno; realizado por
+            la Comisión de Árbitros de la ANFP, presidida por Javier Castrilli;
+            la comisión de Deportes de la Cámara de Diputadas y Diputados acordó
+            oficiar a esta institución deportiva para que informe acerca de las
+            desvinculaciones y a la Dirección del Trabajo para que investigue y
+            se pronuncie si estos hechos constituyen o no prácticas
+            antisindicales.
+          </p>
+          <p class="p">
+            Quien hizo la solicitud fue la diputada independiente RN, Erika
+            Olivera, quien señaló que “urge saber lo que ocurrió porque estas
+            desvinculaciones se dieron después de que todos los despedidos
+            apoyaran públicamente un conjunto de demandas sindicales del grupo
+            de árbitros del fútbol chileno. Aparentemente, esto se trata de una
+            represalia”.
+          </p>
+          <p class="p">
+            La parlamentaria, agregó que el tema es preocupante “porque dentro
+            de este grupo de árbitros despedidos se encuentran destacados
+            profesionales y representantes del arbitraje nacional. A modo de
+            ejemplo, tres de ellos arbitrarán esta semana partidos
+            internacionales de Copa Libertadores, y uno de ellos se encuentra
+            actualmente en las nóminas para arbitrar en el próximo mundial”.
+          </p>
+          <p class="p">
+            También aseguró que durante los últimos 4 años “hemos defendido a
+            los deportistas y revindicado sus derechos como trabajadores y
+            trabajadoras, y de ese mismo modo vamos a defender los derechos
+            laborales de quienes trabajan en el deporte de manera profesional,
+            sean árbitros, personal técnico, entrenadores, auxiliares, etc”.
+          </p>
+        </div>
+        <div class="not">
+          <img class="img" src="src/boric.png" alt="" />
+          <li>
+            <a
+              class="link"
+              href="https://chile.as.com/tikitakas/boric-se-reune-con-dos-historicos-de-universidad-catolica-gran-charla-n/"
+              >Noticia completa
+            </a>
+          </li>
+
+          <p class="p">
+            En medio de su visita a Argentina, Gabriel Boric también tuvo tiempo
+            para hablar de fútbol. El Presidente de Chile se reunió con Alberto
+            Acosta y Néstor Gorosito, dos nombres que conformaron una de las
+            duplas más recordadas en la historia de la UC.
+          </p>
+          <p class="p">
+            “Gran charla de futbol con un fanático cruzado, Gabriel Boric,
+            Presidente de Chile”, escribió Acosta en Twitter, donde también
+            mostró dos imágenes del encuentro.
+          </p>
+          <p class="p">
+            La reunión tuvo lugar en la embajada chilena en Buenos Aires, y
+            tanto Acosta como Gorosito asistieron con una vestimenta formal. Muy
+            acorde a la instancia.
+          </p>
+        </div>
+        <div class="not">
+          <img class="img" src="src/medel.png" alt="" />
+          <li>
+            <a
+              class="link"
+              href="https://chile.as.com/futbol/la-brutal-autocritica-de-medel-estoy-afectado-fuimos-de-los-peores-de-sudamerica-n/"
+              >Noticia completa
+            </a>
+          </li>
+
+          <p class="p">
+            Luego del empate sin goles entre el Bologna y el Milan, Gary Medel
+            charló con ESPN. El hombre formado en la UC abordó su choque con
+            Zlatan Ibrahimovic en San Siro, en lo que fue una de las postales
+            más impactantes del lunes.
+          </p>
+          <p class="p">
+            “Choqué la cabeza con Zlatan y no pude seguir porque estaba mareado,
+            pero hicimos un gran partido. Me tienen que cerrar la herida y luego
+            veremos qué pasa”, dijo Medel.
+          </p>
+          <p class="p">
+            En la instancia, el ‘Pitbull’ también habló de su presente: “Estoy
+            en un gran momento. Los 34 años son solo una edad, me siento súper
+            bien y vamos a seguir igual. Vamos año por año. El año pasado no
+            estaba así, porque tuve muchas lesiones. El fútbol es de momentos,
+            ahora estoy súper bien y si sigo así, debo seguir andando. Estoy
+            súper contento con mi forma y vamos a seguir para adelante”.
+          </p>
+          <p class="p">
+            Eso sí, Medel reconoció que su estado de ánimo no es el mejor,
+            producto del fracaso de la Roja en las Eliminatorias: “Todavía estoy
+            afectado. No fuimos regulares. Fuimos de los peores equipos de
+            Sudamérica y se reflejó al no clasificar al Mundial. Pero ya hay que
+            pasar página, pensar en mi club y en hacerlo bien para estar en un
+            futuro”.
+          </p>
+          <p class="p">
+            Por último, el zaguero reveló lo que espera del nuevo DT de la
+            Selección. “Me gustaría que tenga las ideas claras, una forma de
+            jugar y eso lo traspase a nosotros. Esa es la mejor manera. Después
+            hay poco tiempo cuando uno va a la Selección, pero hay que
+            aprovecharlo al máximo. Hay buen plantel, buenos jugadores, jóvenes
+            que vienen con hambre y los que tenemos experiencia tenemos mucho
+            por dar. Yo estoy disponible para ser un aporte adentro o afuera”,
+            concluyó Medel.
+          </p>
+        </div>
+      </div>
+
+      <div id="contenido-article3" class="contenido-article2">
+        <div class="not">
+          <img class="img" src="src/mai.png" alt="" />
+          <li>
+            <a
+              class="link"
+              href="https://www.milenio.com/negocios/tortilla-vende-26-pesos-kilo-mexico"
+              >Noticia completa
+            </a>
+          </li>
+
+          <p class="p">
+            La tortilla de maíz, uno de los alimentos base en México, se vende
+            hasta 26 pesos por kilo en algunas ciudades del país, de acuerdo con
+            datos del Sistema Nacional de Información e Integración de Mercados
+            (SIINM) de la Secretaría de Economía
+          </p>
+          <p class="p">
+            La ciudad de Hermosillo, en Sonora, es donde se vende el kilo de
+            tortilla más caro en todo el país, seguida por Nogales, en el mismo
+            estado, y Tampico, en Tamaulipas, donde se oferta hasta en 25 pesos
+            por kilo.
+          </p>
+          <p class="p">
+            En contraste, Ciudad Juárez, Chihuahua, es la zona en donde se vende
+            más barato el kilogramo de tortilla, en 13.56 pesos, seguido por la
+            zona metropolitana de Puebla, con 13.80 pesos.
+          </p>
+          <p class="p">
+            El precio promedio de la tortilla en México es de 20.04 pesos por
+            kilo, 5.08 por ciento más de lo que costaba hace un mes; en tanto,
+            en tiendas de autoservicio el alimento se vende en promedio en 13.63
+            pesos por kilo.
+          </p>
+        </div>
+        <div class="not">
+          <img class="img" src="src/work.png" alt="" />
+          <li>
+            <a class="link" href="https://www.sinembargo.mx/05-04-2022/4157326"
+              >Noticia completa
+            </a>
+          </li>
+          <p class="p">
+            México creó 64 mil 566 empleos formales en marzo, un incremento
+            mensual de 0.3 por ciento, con lo que alcanzó un total de 21
+            millones 5 mil 852 puestos registrados, informó el Instituto
+            Mexicano del Seguro Social (IMSS).
+          </p>
+          <p class="p">
+            El IMSS refirió que en el primer trimestre de 2022 se crearon 385
+            mil 704 puestos de trabajo, cifra que representa el aumento más alto
+            desde que se tiene registro en periodos similares.
+          </p>
+          <p class="p">
+            De acuerdo con información del IMSS, de los puestos de trabajo
+            generados en el periodo enero-marzo de 2022, 63 por ciento
+            correspondió a empleos permanentes y el resto a eventuales.
+          </p>
+          <p class="p">
+            El IMSS refirió que los sectores económicos con el mayor crecimiento
+            porcentual anual en puestos de trabajo son el de transportes y
+            comunicaciones, con 11.9 por ciento; construcción, con 8 por ciento;
+            y el extractivo, con 7.1 por ciento.
+          </p>
+        </div>
+        <div class="not">
+          <img class="img" src="src/goold.png" alt="" />
+          <li>
+            <a
+              class="link"
+              href="https://gestion.pe/fotogalerias/los-multimillonarios-rusos-mas-afectados-por-la-invasion-a-ucrania-noticia/"
+              >Noticia completa
+            </a>
+          </li>
+          <p class="p">
+            Entre la invasión rusa a Ucrania y la pandemia de covid-19 la
+            fortuna de algunos multimillonarios del mundo se vio afectada; sin
+            embargo, en algunos otros casos su fortuna aumentó y ello modificó
+            la lista de los más ricos del planeta.
+          </p>
+          <p class="p">
+            De acuerdo con el ranking 2022 de la revista Forbes, más de mil
+            multimillonarios son más ricos que hace un año, entre ellos algunos
+            mexicanos. Por ello, aquí te presentamos la lista de los 10 más
+            ricos del país, entre los que destaca Carlos Slim, quien también es
+            el empresario latinoamericano con la mayor fortuna.
+          </p>
+          <p class="p">
+            Te recomendamos: Elon Musk desbanca a Jeff Bezos y ya es la persona
+            más rica del mundo
+          </p>
+        </div>
+      </div>
+      <form class="formulario-contacto">
+        <div class="form-group">
+          <label for="formGroupExampleInput">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="formGroupExampleInput"
+            placeholder="Example input"
+          />
+        </div>
+        <div class="form-group">
+          <textarea name="desc" id="contenido" cols="30" rows="10"></textarea>
+        </div>
+        <button type="button" id="enviar" class="btn btn-primary">
+          Enviar
+        </button>
+      </form>
+      <section class="section" id="section1"></section>
+      <section class="section" id="section2"></section>
+      <section class="section">
+        <div id="section3"></div>
+      </section>
+    </article>
+
+    <footer>
+      <div class="footer">
+        <p>Aiep. - San felipe. - 10 de Abril del 2022</p>
+      </div>
+    </footer>
+  </body>
+</html>
